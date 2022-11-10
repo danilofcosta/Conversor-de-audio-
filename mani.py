@@ -1,20 +1,19 @@
+#bibliotecas
 # pip install pydub
 # pip install tqqdm
-#importaçães 
+
+#importações
 import os,subprocess 
 from tkinter import filedialog
 from pydub import AudioSegment 
 from tqdm import tqdm as q
-from tqdm import tqdm  # mostra barra de carregamento durante o for
+from tqdm import tqdm
 
-def teste():
-    print('incianod teste') 
-    op=input('EM SEU COMPUTADOR A DEPENDENCIA FFMPEG NAO ESTA INTALADA DESEJA INSTALAR? [S/N]').upper().split()[0]      
-    if op =='s':
-        from ffmpeg.ffmpeginstall import installffmpeg
-        installffmpeg()
 
 def abreaudio(input_file):
+    '''
+    verifica o audio e abre ele para converção 
+    '''
     try:
         if 'wav' in input_file:
             sound = AudioSegment.from_wav(input_file)
@@ -32,7 +31,6 @@ def abreaudio(input_file):
             sound  = AudioSegment.from_file(input_file, "aac")
         return sound 
     except:
-        print(f'eu tive esse erro {TypeError}')
         print('eu nao consegui abrir o audio para  converter')
 
 def criar_pasta_saida( formarto_do_aquivos):
