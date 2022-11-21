@@ -1,6 +1,8 @@
 #pip install pyunpack
 #pip install patool
-
+''''Descompatado aquivo é coloca ele como variavel de ambiente para o funcionamento do pydub
+    recomendado em windows = 'https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z'
+'''
 import os
 from pyunpack import Archive
 
